@@ -20,10 +20,10 @@ $event = new Google_Service_Calendar_Event(array(
     'summary' => 'Test Event',
     'description' => 'Test Event',
     'start' => array(
-        'dateTime' => '2024-10-09T09:00:00'
+        'dateTime' => '2024-10-09T09:00:00-07:00'
     ),
     'end' => array(
-        'dateTime' => '2024-10-09T12:00:00'
+        'dateTime' => '2024-10-09T12:00:00-07:00'
     ),
 ));
 
