@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 require_once 'google-api-php-client-PHP8.3/vendor/autoload.php';
 
 $client = new Google_Client();
-putenv('GOOGLE_APPLICATION_CREDENTIALS=meeting-room-calendar-438119-38f3f35bc105.json');
+putenv('GOOGLE_APPLICATION_CREDENTIALS=meeting-room-calendar-438119-047a144cdbca.json');
 $client->useApplicationDefaultCredentials();
 $client->setApplicationName("meeting_room_calendar");
 $client->setScopes(Google_Service_Calendar::CALENDAR);
