@@ -27,7 +27,7 @@ $event = new Google_Service_Calendar_Event(array(
     ),
 ));
 
-$calendarId = 'c_df2510bec17a77491255287d72279e798e69916360fc3a39009b716c36fb2adf@group.calendar.google.com';
+$calendarId = 'c_6f68de5662878ea0012a69bc021ae1fc0a45b79a042210f65f00c42c90a6a4e6@group.calendar.google.com';
 $service->events->insert($calendarId, $event);
 
 ?>
