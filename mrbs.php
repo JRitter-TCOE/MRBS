@@ -15,7 +15,7 @@ echo "<p>$date $start $end</p>";
 $startDateTime = "$date"."T"."$start"."-07:00";
 $endDateTime = "$date"."T"."$end"."-07:00";
 
-echo "<p>$startDateTime $endDateTime</p>"
+echo "<p>$startDateTime $endDateTime</p>";
 
 require_once './google-api-php-client--PHP8.0/vendor/autoload.php';
 
