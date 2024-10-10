@@ -27,10 +27,10 @@ $event = new Google_Service_Calendar_Event(array(
     'summary' => 'Test Event',
     'description' => 'Test Event',
     'start' => array(
-        'dateTime' => $date.'T'.$start.'-07:00'
+        'dateTime' => "$date"."T"."$start"."-07:00"
     ),
     'end' => array(
-        'dateTime' => $date.'T'.$end.'-07:00'
+        'dateTime' => "$date"."T"."$end"."-07:00"
     ),
 ));
 
