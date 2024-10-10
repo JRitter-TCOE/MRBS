@@ -6,6 +6,8 @@ error_reporting(E_ALL);
 
 echo "<p>Starting Script</p>";
 
+$title = $_POST['title'];
+$desc = $_POST['desc'];
 $date = $_POST['date'];
 $start = $_POST['start'];
 $end = $_POST['end'];
@@ -29,8 +31,8 @@ $client->setAccessType('offline');
 $service = new Google_Service_Calendar($client);
 
 $event = new Google_Service_Calendar_Event(array(
-    'summary' => 'Test Event',
-    'description' => 'Test Event',
+    'summary' => $title,
+    'description' => $desc,
     'start' => array(
         'dateTime' => $startDateTime
     ),
