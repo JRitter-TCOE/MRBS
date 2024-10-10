@@ -12,6 +12,11 @@ $end = $_POST['end'];
 
 echo "<p>$date $start $end</p>";
 
+$startDateTime = "$date"."T"."$start"."-07:00";
+$endDateTime = "$date"."T"."$end"."-07:00";
+
+echo "<p>$startDateTime $endDateTime</p>"
+
 require_once './google-api-php-client--PHP8.0/vendor/autoload.php';
 
 $client = new Google_Client();
@@ -27,10 +32,10 @@ $event = new Google_Service_Calendar_Event(array(
     'summary' => 'Test Event',
     'description' => 'Test Event',
     'start' => array(
-        'dateTime' => "$date"."T"."$start"."-07:00"
+        'dateTime' => $startDateTime
     ),
     'end' => array(
-        'dateTime' => "$date"."T"."$end"."-07:00"
+        'dateTime' => $endDateTime
     ),
 ));
 
