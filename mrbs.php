@@ -6,6 +6,11 @@ error_reporting(E_ALL);
 
 echo "<p>Starting Script</p>";
 
+$date = $_POST['date'];
+$start = $_POST['start'];
+$end = $_POST['end'];
+
+echo "<p>$date $start $end</p>";
 
 require_once './google-api-php-client--PHP8.0/vendor/autoload.php';
 
