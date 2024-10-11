@@ -33,7 +33,7 @@ $event = new Google_Service_Calendar_Event(array(
 
 $eventId = "b6jlel8l6brdh3p4ecjbjtvbe0";
 $calendarId = 'c_6f68de5662878ea0012a69bc021ae1fc0a45b79a042210f65f00c42c90a6a4e6@group.calendar.google.com';
-$event = $service->events->update($calendarId, $eventId, $event);
+$event = $service->events->delete($calendarId, $eventId);
 
 echo json_encode($event);
 
