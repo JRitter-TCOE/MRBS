@@ -19,10 +19,21 @@ $client->setAccessType('offline');
 
 $service = new Google_Service_Calendar($client);
 
-
+$event = new Google_Service_Calendar_Event(array(
+    'summary' => "Test Event",
+    'description' => "Test Event",
+    'start' => array(
+        'dateTime' => "2024-10-09T10:00:00-07:00"
+    ),
+    'end' => array(
+        'dateTime' => "2024-10-09T12:00:00-07:00"
+    ),
+));
 
 $calendarId = 'c_6f68de5662878ea0012a69bc021ae1fc0a45b79a042210f65f00c42c90a6a4e6@group.calendar.google.com';
-echo json_encode($service->events);
+$event = $service->events->insert($calendarId, $event);
+
+echo json_encode($event);
 
 echo "<p>End Script</p>";
 
