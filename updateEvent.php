@@ -20,18 +20,20 @@ $client->setAccessType('offline');
 $service = new Google_Service_Calendar($client);
 
 $event = new Google_Service_Calendar_Event(array(
-    'summary' => "Test Event Updated",
+    'summary' => "Test Event Updated 2",
     'description' => "Test Event",
     'start' => array(
-        'dateTime' => "2024-10-09T12:00:00-07:00"
+        'dateTime' => "2024-10-09T10:00:00-07:00"
     ),
     'end' => array(
-        'dateTime' => "2024-10-09T14:00:00-07:00"
+        'dateTime' => "2024-10-09T12:00:00-07:00"
     ),
 ));
 
+
+$eventId = "b6jlel8l6brdh3p4ecjbjtvbe0";
 $calendarId = 'c_6f68de5662878ea0012a69bc021ae1fc0a45b79a042210f65f00c42c90a6a4e6@group.calendar.google.com';
-$event = $service->events->update($calendarId, "b6jlel8l6brdh3p4ecjbjtvbe0", $event);
+$event = $service->events->update($calendarId, $eventId, $event);
 
 echo json_encode($event);
 
