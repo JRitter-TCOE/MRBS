@@ -4,9 +4,15 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-echo "<p>Starting Script</p>";
+$eventId = substr($_POST['eventId'], 0, 26);
+$title = $_POST['title'];
+$desc = $_POST['desc'];
+$date = $_POST['date'];
+$start = $_POST['start'];
+$end = $_POST['end'];
 
-
+$startDateTime = "$date"."T"."$start"."-07:00";
+$endDateTime = "$date"."T"."$end"."-07:00";
 
 require_once './google-api-php-client--PHP8.0/vendor/autoload.php';
 
@@ -20,23 +26,22 @@ $client->setAccessType('offline');
 $service = new Google_Service_Calendar($client);
 
 $event = new Google_Service_Calendar_Event(array(
-    'summary' => "Test Event Updated 2",
-    'description' => "Test Event",
+    'summary' => $title,
+    'description' => $desc,
     'start' => array(
-        'dateTime' => "2024-10-09T10:00:00-07:00"
+        'dateTime' => $startDateTime
     ),
     'end' => array(
-        'dateTime' => "2024-10-09T12:00:00-07:00"
+        'dateTime' => $endDateTime
     ),
 ));
 
 
-$eventId = "b6jlel8l6brdh3p4ecjbjtvbe0";
 $calendarId = 'c_6f68de5662878ea0012a69bc021ae1fc0a45b79a042210f65f00c42c90a6a4e6@group.calendar.google.com';
 $event = $service->events->update($calendarId, $eventId, $event);
 
-echo json_encode($event);
 
-echo "<p>End Script</p>";
+
+
 
 ?>
