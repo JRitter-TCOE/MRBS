@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 
-$eventId = strip_tags($_POST['eventId']);
+$eventId = substr($_POST['eventId'], 0, 26);
 
 echo $eventId;
 
