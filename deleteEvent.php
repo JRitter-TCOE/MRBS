@@ -22,7 +22,7 @@ $service = new Google_Service_Calendar($client);
 
 
 $calendarId = 'c_6f68de5662878ea0012a69bc021ae1fc0a45b79a042210f65f00c42c90a6a4e6@group.calendar.google.com';
-$event = $service->events->delete($calendarId, $eventId);
+$service->events->delete($calendarId, $eventId);
 
 
 ?>
