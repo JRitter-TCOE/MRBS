@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-echo "<p>Starting Script</p>";
+
 
 $title = $_POST['title'];
 $desc = $_POST['desc'];
@@ -12,12 +12,11 @@ $date = $_POST['date'];
 $start = $_POST['start'];
 $end = $_POST['end'];
 
-echo "<p>$date $start $end</p>";
+
 
 $startDateTime = "$date"."T"."$start"."-07:00";
 $endDateTime = "$date"."T"."$end"."-07:00";
 
-echo "<p>$startDateTime $endDateTime</p>";
 
 require_once './google-api-php-client--PHP8.0/vendor/autoload.php';
 
@@ -42,8 +41,8 @@ $event = new Google_Service_Calendar_Event(array(
 ));
 
 $calendarId = 'c_6f68de5662878ea0012a69bc021ae1fc0a45b79a042210f65f00c42c90a6a4e6@group.calendar.google.com';
-$service->events->insert($calendarId, $event);
+$event = $service->events->insert($calendarId, $event);
 
-echo "<p>End Script</p>";
+echo $event->id;
 
 ?>
