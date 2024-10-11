@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 
-$eventId = $_POST['eventId'];
+$eventId = "aue35bg79o5mpfrbte8tdrqagg";
 
 
 require_once './google-api-php-client--PHP8.0/vendor/autoload.php';
