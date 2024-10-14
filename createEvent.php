@@ -4,10 +4,17 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+$GRANITE_ROOM = 'c_6f68de5662878ea0012a69bc021ae1fc0a45b79a042210f65f00c42c90a6a4e6@group.calendar.google.com';
+$BOHDA_POM_ROOM = 'c_0f15cd16f70c5857a88ca4df6be6e0c974f32c4d5d2205bbc6515b3c53732d48@group.calendar.google.com';
 
+$conf_room = array(
+    'Granite Room' => 'c_6f68de5662878ea0012a69bc021ae1fc0a45b79a042210f65f00c42c90a6a4e6@group.calendar.google.com',
+    'Bohda-Pom Room' => 'c_0f15cd16f70c5857a88ca4df6be6e0c974f32c4d5d2205bbc6515b3c53732d48@group.calendar.google.com'
+);
 
 $title = $_POST['title'];
 $desc = $_POST['desc'];
+$room = $_POST['room'];
 $date = $_POST['date'];
 $start = $_POST['start'];
 $end = $_POST['end'];
@@ -40,7 +47,7 @@ $event = new Google_Service_Calendar_Event(array(
     ),
 ));
 
-$calendarId = 'c_6f68de5662878ea0012a69bc021ae1fc0a45b79a042210f65f00c42c90a6a4e6@group.calendar.google.com';
+$calendarId = $conf_room[$room];
 $event = $service->events->insert($calendarId, $event);
 
 echo $event->id;
