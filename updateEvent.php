@@ -16,6 +16,7 @@ $room = $_POST['room'];
 $date = $_POST['date'];
 $start = $_POST['start'];
 $end = $_POST['end'];
+$prevRoom = $_POST['prevRoom'];
 
 $startDateTime = "$date"."T"."$start"."-07:00";
 $endDateTime = "$date"."T"."$end"."-07:00";
@@ -42,9 +43,17 @@ $event = new Google_Service_Calendar_Event(array(
     ),
 ));
 
+if ($room == $prevRoom) {
+    $calendarId = $conf_room[$room];
+    $event = $service->events->update($calendarId, $eventId, $event);
+    echo $eventId;
+}
+else {
+    $service->events->delete($conf_room[$prevRoom], $eventId);
+    $event = $service->events->insert($conf_room[$room], $event);
+    echo $event->id;
+}
 
-$calendarId = $conf_room[$room];
-$event = $service->events->update($calendarId, $eventId, $event);
 
 
 
