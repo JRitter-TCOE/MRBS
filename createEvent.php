@@ -18,8 +18,8 @@ $end = $_POST['end'];
 
 
 
-$startDateTime = "$date"."T"."$start"."-07:00";
-$endDateTime = "$date"."T"."$end"."-07:00";
+$startDateTime = "$date"."T"."$start"."Z";
+$endDateTime = "$date"."T"."$end"."Z";
 
 
 require_once './google-api-php-client--PHP8.0/vendor/autoload.php';
