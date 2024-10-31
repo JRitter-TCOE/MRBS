@@ -18,8 +18,8 @@ $end = $_POST['end'];
 
 
 
-$startDateTime = "$date"."T"."$start"."Z";
-$endDateTime = "$date"."T"."$end"."Z";
+$startDateTime = "$date"."T"."$start";
+$endDateTime = "$date"."T"."$end";
 
 
 require_once './google-api-php-client--PHP8.0/vendor/autoload.php';
@@ -37,10 +37,12 @@ $event = new Google_Service_Calendar_Event(array(
     'summary' => $title,
     'description' => $desc,
     'start' => array(
-        'dateTime' => $startDateTime
+        'dateTime' => $startDateTime,
+        'timeZone' => 'America/Los Angeles'
     ),
     'end' => array(
-        'dateTime' => $endDateTime
+        'dateTime' => $endDateTime,
+        'timeZone' => 'America/Los Angeles'
     ),
 ));
 
