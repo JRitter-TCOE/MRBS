@@ -38,11 +38,11 @@ $event = new Google_Service_Calendar_Event(array(
     'description' => $desc,
     'start' => array(
         'dateTime' => $startDateTime,
-        'timeZone' => 'America/Los Angeles'
+        'timeZone' => 'America/Los_Angeles'
     ),
     'end' => array(
         'dateTime' => $endDateTime,
-        'timeZone' => 'America/Los Angeles'
+        'timeZone' => 'America/Los_Angeles'
     ),
 ));
 
